@@ -1,0 +1,44 @@
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        {/* Your app code */}
+      </div>
+    </Router>
+  );
+}
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+
+const loginForm = document.getElementsByTagName('form')[0];
+const signupForm = document.getElementsByTagName('form')[1];
+
+loginForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const username = loginForm.elements['username'].value;
+  const password = loginForm.elements['password'].value;
+  // Check if username and password are valid
+  // If valid, log in the user
+  console.log(`Logged in user: ${username}`);
+});
+
+signupForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const newUsername = signupForm.elements['new-username'].value;
+  const newPassword = signupForm.elements['new-password'].value;
+  // Check if new username and password are valid
+  // If valid, create a new user account
+  console.log(`Created new user account: ${newUsername}`);
+});
